@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interview List</title>
+</head>
+<body>
+    <h2>List of Interviews</h2>
+    <ul>
+        {% for interview in interviews %}
+        <li>{{ interview.name }} - {{ interview.email }} - <a href="{% url 'interview_delete' interview.pk %}">Delete</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'interview_create' %}">Create New Interview</a>
+</body>
+</html>
